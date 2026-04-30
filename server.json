@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.quizlar/mcp-server",
+  "title": "Quizlar — voice-powered AI flashcards with spaced repetition",
+  "description": "Create flashcard decks from YouTube videos, PDFs, web pages, or raw text. Run interactive text quizzes with automatic grading. Track memory with FSRS spaced repetition. Education-first MCP server: every tool maps to a feature real learners use daily.",
+  "version": "1.0.0",
+  "websiteUrl": "https://quizlar.app",
+  "repository": {
+    "url": "https://github.com/quizlar/mcp-server",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.quizlar.app/mcp/",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Authorization header value. Mint a Quizlar API key at https://quizlar.app/settings/api-keys (format: sk-qz-<32 chars>) and provide as 'Bearer sk-qz-...'.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
