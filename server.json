@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.quizlar/mcp-server",
   "title": "Quizlar — voice-powered AI flashcards with spaced repetition",
-  "description": "Create flashcard decks from YouTube videos, PDFs, web pages, or raw text. Run interactive text quizzes with automatic grading. Track memory with FSRS spaced repetition. Education-first MCP server: every tool maps to a feature real learners use daily.",
+  "description": "Voice-led, FSRS-scheduled flashcards from YouTube, PDFs, web, or text. Auto-graded quizzes.",
   "version": "1.0.0",
   "websiteUrl": "https://quizlar.app",
   "repository": {
