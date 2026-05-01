@@ -1,0 +1,54 @@
+{
+  "$schema": "https://github.com/anthropics/mcpb/raw/main/schemas/mcpb-manifest-v0.4.schema.json",
+  "manifest_version": "0.4",
+  "name": "quizlar",
+  "display_name": "Quizlar",
+  "version": "1.0.0",
+  "description": "Voice-led, FSRS-scheduled flashcards from YouTube, PDFs, web, or text. Auto-graded quizzes.",
+  "long_description": "Quizlar is the learning MCP server. It turns YouTube videos, PDFs, web URLs, or pasted text into flashcards, then runs interactive quizzes with FSRS spaced-repetition scheduling so the material sticks. 22 tools that map one-to-one to learner verbs: ingest, quiz, review, track. Same grading and scheduling pipeline that powers the consumer voice app at quizlar.app.",
+  "author": {
+    "name": "Quizlar",
+    "url": "https://quizlar.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quizlar/mcp-server"
+  },
+  "homepage": "https://quizlar.app",
+  "documentation": "https://github.com/quizlar/mcp-server",
+  "support": "https://github.com/quizlar/mcp-server/issues",
+  "icon": "icon-512.png",
+  "license": "MIT",
+  "keywords": [
+    "flashcards",
+    "spaced-repetition",
+    "fsrs",
+    "study",
+    "learning",
+    "quiz",
+    "education",
+    "voice",
+    "youtube",
+    "pdf"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "QUIZLAR_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Quizlar API key",
+      "description": "Your Quizlar API key (format: sk-qz-<32 chars>). Mint one at https://quizlar.app/settings/api-keys.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
