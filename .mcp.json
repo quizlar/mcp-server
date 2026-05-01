@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "quizlar": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.quizlar.app/mcp/",
+        "--header",
+        "Authorization:Bearer ${QUIZLAR_API_KEY}"
+      ],
+      "env": {
+        "QUIZLAR_API_KEY": "sk-qz-replace-with-your-key"
+      }
+    }
+  }
+}
