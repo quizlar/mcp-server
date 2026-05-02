@@ -36,12 +36,12 @@ Quizlar speaks Streamable HTTP, but Cline's stdio config wants a local command. 
 
 ## Tools you can call after installing
 
-- `create_deck_from_url(url)` — ingest a YouTube/PDF/web URL into a deck
-- `create_deck_from_text(text)` — ingest pasted notes
+- `create_deck_from_youtube(url)` — ingest a YouTube URL into a deck
+- `create_deck_from_text(text)` — ingest pasted notes (use this for PDFs/web pages after extracting text)
 - `quiz_me(topic)` — composite: build deck + start quiz in one step
-- `start_quiz(deck_id)` / `submit_answer(answer)` / `end_quiz()` — manual quiz loop
+- `start_quiz(deck_id)` / `submit_answer(answer)` / `skip_question()` / `end_quiz()` — manual quiz loop
 - `get_study_recommendations()` — FSRS-prioritized cards due across all decks
-- `get_progress()` / `get_streak()` / `get_analytics()` — learning state
+- `get_progress()` / `get_learning_velocity()` / `get_knowledge_gaps()` / `get_retention_curves()` — learning state
 
 22 tools total. See <https://github.com/quizlar/mcp-server> for the full list.
 

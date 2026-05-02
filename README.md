@@ -123,10 +123,10 @@ Replace `claude` with `cursor`, `windsurf`, etc. Smithery walks you through past
 
 22 tools mapped 1:1 to learner verbs:
 
-- **Ingest:** `create_deck_from_youtube`, `create_deck_from_pdf`, `create_deck_from_url`, `create_deck_from_text`, `import_shared_deck`, `get_job_status`
-- **Quiz:** `quiz_me` (composite: build + start in one call), `start_quiz`, `next_card`, `submit_answer`, `end_quiz`
-- **Review:** `get_study_recommendations`, `get_progress`, `get_streak`, `get_analytics`
-- **Manage:** `list_decks`, `get_deck`, `update_deck`, `delete_deck`, `add_card`, `update_card`, `get_user_profile`, `update_preferences`
+- **Build decks:** `create_deck`, `create_deck_from_text`, `create_deck_from_youtube`, `create_cards_batch`, `get_job_status`
+- **Quiz:** `quiz_me` (composite: build + start in one call), `start_quiz`, `submit_answer`, `skip_question`, `end_quiz`
+- **Browse:** `list_decks`, `get_deck`, `list_cards`, `search_decks`, `search_cards`, `list_sessions`
+- **Analytics:** `get_progress`, `get_study_recommendations`, `get_learning_velocity`, `get_knowledge_gaps`, `get_retention_curves`, `get_card_difficulty_stats`
 
 ## Auth
 
