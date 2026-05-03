@@ -132,6 +132,16 @@ Replace `claude` with `cursor`, `windsurf`, etc. Smithery walks you through past
 
 Bearer API key (`sk-qz-<32 chars>`) is the simplest path and works in every client snippet above. Quizlar also exposes full OAuth 2.1 with Dynamic Client Registration + PKCE at `https://mcp.quizlar.app/.well-known/oauth-authorization-server` for clients that prefer a browser flow.
 
+## Troubleshooting
+
+- **`401 Unauthorized` on every tool call** — API key is missing, mistyped, or revoked. Re-mint at <https://quizlar.app/settings/api-keys> and paste the full `sk-qz-…` value, including the prefix, into the `Authorization: Bearer …` header.
+- **Client doesn't see Quizlar tools after editing config** — fully restart the client (most don't hot-reload MCP config). For Claude Desktop, quit from the menu bar; for Cursor / Windsurf / Cline, close all windows.
+- **`mcp-remote` fails to launch** — usually a Node.js / `npx` path issue. Run `npx -y mcp-remote --help` in a terminal to verify it resolves; if behind a corporate proxy, set `HTTPS_PROXY` in the client's `env` block or install `mcp-remote` globally with `npm i -g mcp-remote`.
+- **`429` / quota errors mid-quiz** — free-tier daily limits reached. Quotas reset at midnight UTC; or upgrade at <https://quizlar.app/settings/billing>.
+- **OAuth callback never returns to the client** — your loopback port may be blocked. Fall back to the API-key flow above; it bypasses OAuth entirely.
+
+For anything not covered here, file an issue at <https://github.com/quizlar/mcp-server/issues> or email <support@quizlar.app>.
+
 ## Links
 
 - **App:** <https://quizlar.app>
