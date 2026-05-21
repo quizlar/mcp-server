@@ -1,8 +1,10 @@
 # Quizlar MCPB bundle
 
 Stdio MCP bundle that wraps the Quizlar Streamable HTTP server at
-`https://mcp.quizlar.app/mcp/`. Used to publish to surfaces (Smithery,
-Claude Desktop, Cline) that prefer or require stdio servers.
+`https://mcp.quizlar.app/mcp-apikey/` (the apiKey-only mount; skips the
+OAuth handshake that stdio bridges can't drive). Used to publish to
+surfaces (Smithery, Claude Desktop, Cline) that prefer or require stdio
+servers.
 
 ## Layout
 
@@ -16,7 +18,7 @@ The entrypoint reads `QUIZLAR_API_KEY` from env and execs:
 
 ```sh
 npx -y mcp-remote@latest \
-  https://mcp.quizlar.app/mcp/ \
+  https://mcp.quizlar.app/mcp-apikey/ \
   --header "Authorization:Bearer $QUIZLAR_API_KEY"
 ```
 

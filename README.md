@@ -8,7 +8,7 @@ Quizlar's MCP server lets Claude, Cursor, Cline, Windsurf, or any MCP-compatible
 - Run auto-graded quizzes with the same tier-1-exact-match → phonetic → LLM grading pipeline that powers the [voice product](https://quizlar.app)
 - Track memory with FSRS spaced repetition — Quizlar is the scheduler of record, every answer updates real memory state
 
-This repo is the public discovery surface (`server.json` for the Official MCP Registry + a stdio bundle for clients that need it). The hosted MCP server itself is closed-source and runs at `https://mcp.quizlar.app/mcp/`.
+This repo is the public discovery surface (`server.json` for the Official MCP Registry + a stdio bundle for clients that need it). The hosted MCP server itself is closed-source and runs at `https://mcp.quizlar.app` — `/mcp/` for OAuth-capable clients, `/mcp-apikey/` for apiKey Bearer auth (used by every snippet in this README).
 
 ## Listings
 
@@ -32,7 +32,7 @@ This repo is the public discovery surface (`server.json` for the Official MCP Re
       "args": [
         "-y",
         "mcp-remote",
-        "https://mcp.quizlar.app/mcp/",
+        "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
       ],
@@ -50,7 +50,7 @@ This repo is the public discovery surface (`server.json` for the Official MCP Re
 {
   "mcpServers": {
     "quizlar": {
-      "serverUrl": "https://mcp.quizlar.app/mcp/",
+      "serverUrl": "https://mcp.quizlar.app/mcp-apikey/",
       "headers": { "Authorization": "Bearer ${QUIZLAR_API_KEY}" }
     }
   }
@@ -64,7 +64,7 @@ Then `export QUIZLAR_API_KEY=sk-qz-...` in your shell.
 Open Settings → Connectors → "Add custom connector":
 
 - **Name:** Quizlar
-- **URL:** `https://mcp.quizlar.app/mcp/`
+- **URL:** `https://mcp.quizlar.app/mcp-apikey/`
 - Add header → **Name:** `Authorization`, **Value:** `Bearer sk-qz-...`
 
 Or edit `claude_desktop_config.json` directly using `mcp-remote`:
@@ -77,7 +77,7 @@ Or edit `claude_desktop_config.json` directly using `mcp-remote`:
       "args": [
         "-y",
         "mcp-remote",
-        "https://mcp.quizlar.app/mcp/",
+        "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
       ],
@@ -99,7 +99,7 @@ Edit `cline_mcp_settings.json` (Cline → Settings → MCP Servers → "Edit JSO
       "args": [
         "-y",
         "mcp-remote",
-        "https://mcp.quizlar.app/mcp/",
+        "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
       ],
@@ -130,7 +130,7 @@ Replace `claude` with `cursor`, `windsurf`, etc. Smithery walks you through past
 
 ## Auth
 
-Bearer API key (`sk-qz-<32 chars>`) is the simplest path and works in every client snippet above. Quizlar also exposes full OAuth 2.1 with Dynamic Client Registration + PKCE at `https://mcp.quizlar.app/.well-known/oauth-authorization-server` for clients that prefer a browser flow.
+Bearer API key (`sk-qz-<32 chars>`) is the simplest path; the `/mcp-apikey/` mount used in every snippet above accepts the Bearer header directly and skips the OAuth handshake that some stdio bridges can't drive. Quizlar also exposes full OAuth 2.1 with Dynamic Client Registration + PKCE on `https://mcp.quizlar.app/mcp/` (discovery card at `/.well-known/oauth-authorization-server`) for clients that prefer a browser flow.
 
 ## Troubleshooting
 

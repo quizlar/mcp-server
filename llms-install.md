@@ -1,6 +1,6 @@
 # Installing Quizlar in Cline
 
-Quizlar is a hosted MCP server at `https://mcp.quizlar.app/mcp/` that turns YouTube, PDFs, web pages, and pasted text into FSRS-scheduled flashcards with auto-graded quizzes.
+Quizlar is a hosted MCP server at `https://mcp.quizlar.app` that turns YouTube, PDFs, web pages, and pasted text into FSRS-scheduled flashcards with auto-graded quizzes. This guide uses the `/mcp-apikey/` mount (apiKey-only, skips OAuth) since Cline pairs with a static Bearer header.
 
 ## Steps
 
@@ -16,7 +16,7 @@ Quizlar is a hosted MCP server at `https://mcp.quizlar.app/mcp/` that turns YouT
          "args": [
            "-y",
            "mcp-remote",
-           "https://mcp.quizlar.app/mcp/",
+           "https://mcp.quizlar.app/mcp-apikey/",
            "--header",
            "Authorization:Bearer ${QUIZLAR_API_KEY}"
          ],
@@ -28,7 +28,7 @@ Quizlar is a hosted MCP server at `https://mcp.quizlar.app/mcp/` that turns YouT
    }
    ```
 
-3. **Verify.** Cline should show `quizlar` as connected with green status. If it doesn't, run the command manually in a terminal: `npx -y mcp-remote https://mcp.quizlar.app/mcp/ --header "Authorization:Bearer sk-qz-..."` — you should see "MCP server connected" within a few seconds.
+3. **Verify.** Cline should show `quizlar` as connected with green status. If it doesn't, run the command manually in a terminal: `npx -y mcp-remote https://mcp.quizlar.app/mcp-apikey/ --header "Authorization:Bearer sk-qz-..."` — you should see "MCP server connected" within a few seconds.
 
 ## Why `mcp-remote`?
 
