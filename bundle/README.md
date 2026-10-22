@@ -17,7 +17,7 @@ server/index.js     Stdio entrypoint — spawns mcp-remote with the user's API k
 The entrypoint reads `QUIZLAR_API_KEY` from env and execs:
 
 ```sh
-npx -y mcp-remote@latest \
+npx -y mcp-remote@0.14.3 \
   https://mcp.quizlar.app/mcp-apikey/ \
   --header "Authorization:Bearer $QUIZLAR_API_KEY"
 ```

@@ -31,7 +31,7 @@ This repo is the public discovery surface (`server.json` for the Official MCP Re
       "command": "npx",
       "args": [
         "-y",
-        "mcp-remote",
+        "mcp-remote@0.14.3",
         "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
@@ -76,7 +76,7 @@ Or edit `claude_desktop_config.json` directly using `mcp-remote`:
       "command": "npx",
       "args": [
         "-y",
-        "mcp-remote",
+        "mcp-remote@0.14.3",
         "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
@@ -98,7 +98,7 @@ Edit `cline_mcp_settings.json` (Cline → Settings → MCP Servers → "Edit JSO
       "command": "npx",
       "args": [
         "-y",
-        "mcp-remote",
+        "mcp-remote@0.14.3",
         "https://mcp.quizlar.app/mcp-apikey/",
         "--header",
         "Authorization:Bearer ${QUIZLAR_API_KEY}"
@@ -136,7 +136,7 @@ Bearer API key (`sk-qz-<32 chars>`) is the simplest path; the `/mcp-apikey/` mou
 
 - **`401 Unauthorized` on every tool call** — API key is missing, mistyped, or revoked. Re-mint at <https://quizlar.app/settings/api-keys> and paste the full `sk-qz-…` value, including the prefix, into the `Authorization: Bearer …` header.
 - **Client doesn't see Quizlar tools after editing config** — fully restart the client (most don't hot-reload MCP config). For Claude Desktop, quit from the menu bar; for Cursor / Windsurf / Cline, close all windows.
-- **`mcp-remote` fails to launch** — usually a Node.js / `npx` path issue. Run `npx -y mcp-remote --help` in a terminal to verify it resolves; if behind a corporate proxy, set `HTTPS_PROXY` in the client's `env` block or install `mcp-remote` globally with `npm i -g mcp-remote`.
+- **`mcp-remote` fails to launch** — usually a Node.js / `npx` path issue. Run `npx -y mcp-remote@0.14.3 --help` in a terminal to verify it resolves; if behind a corporate proxy, set `HTTPS_PROXY` in the client's `env` block or install `mcp-remote` globally with `npm i -g mcp-remote@0.14.3`.
 - **`429` / quota errors mid-quiz** — free-tier daily limits reached. Quotas reset at midnight UTC; or upgrade at <https://quizlar.app/settings/billing>.
 - **OAuth callback never returns to the client** — your loopback port may be blocked. Fall back to the API-key flow above; it bypasses OAuth entirely.
 

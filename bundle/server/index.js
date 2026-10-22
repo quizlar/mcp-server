@@ -14,7 +14,7 @@ if (!apiKey) {
 
 const args = [
   '-y',
-  'mcp-remote@latest',
+  'mcp-remote@0.14.3',
   'https://mcp.quizlar.app/mcp-apikey/',
   '--header',
   `Authorization:Bearer ${apiKey}`,

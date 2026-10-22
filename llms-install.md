@@ -15,7 +15,7 @@ Quizlar is a hosted MCP server at `https://mcp.quizlar.app` that turns YouTube, 
          "command": "npx",
          "args": [
            "-y",
-           "mcp-remote",
+           "mcp-remote@0.14.3",
            "https://mcp.quizlar.app/mcp-apikey/",
            "--header",
            "Authorization:Bearer ${QUIZLAR_API_KEY}"
@@ -28,7 +28,7 @@ Quizlar is a hosted MCP server at `https://mcp.quizlar.app` that turns YouTube, 
    }
    ```
 
-3. **Verify.** Cline should show `quizlar` as connected with green status. If it doesn't, run the command manually in a terminal: `npx -y mcp-remote https://mcp.quizlar.app/mcp-apikey/ --header "Authorization:Bearer sk-qz-..."` — you should see "MCP server connected" within a few seconds.
+3. **Verify.** Cline should show `quizlar` as connected with green status. If it doesn't, run the command manually in a terminal: `npx -y mcp-remote@0.14.3 https://mcp.quizlar.app/mcp-apikey/ --header "Authorization:Bearer sk-qz-..."` — you should see "MCP server connected" within a few seconds.
 
 ## Why `mcp-remote`?
 
