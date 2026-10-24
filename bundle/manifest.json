@@ -3,7 +3,7 @@
   "manifest_version": "0.4",
   "name": "quizlar",
   "display_name": "Quizlar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Voice-led, FSRS-scheduled flashcards from YouTube, PDFs, web, or text. Auto-graded quizzes.",
   "long_description": "Quizlar is the learning MCP server. It turns YouTube videos, PDFs, web URLs, or pasted text into flashcards, then runs interactive quizzes with FSRS spaced-repetition scheduling so the material sticks. 22 tools that map one-to-one to learner verbs: ingest, quiz, review, track. Same grading and scheduling pipeline that powers the consumer voice app at quizlar.app.",
   "author": {
